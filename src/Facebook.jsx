@@ -1,7 +1,7 @@
 import React from 'react'
-import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, FacebookAuthProvider ,onAuthStateChanged } from "firebase/auth";
 import app from './firebase';
-
+import { useEffect } from 'react';
 const Facebook = () => {
   useEffect(() => {
     const auth = getAuth(app);
