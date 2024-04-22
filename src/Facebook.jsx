@@ -3,6 +3,31 @@ import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import app from './firebase';
 
 const Facebook = () => {
+  useEffect(() => {
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { displayName, email, emailVerified, uid } = user;
+        console.log(
+          "User is signed in:",
+          displayName,
+          email,
+          emailVerified,
+          uid,
+          user
+        );
+
+        if (emailVerified) {
+          console.log("Email is verified!");
+         
+        } else {
+          console.log("Email is not verified.");
+        }
+      } 
+    });
+
+    return () => unsubscribe();
+  }, []);
 const handleFb = (e)=>{
   e.preventDefault()
   const auth = getAuth(app);
@@ -15,7 +40,7 @@ const handleFb = (e)=>{
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       const credential = FacebookAuthProvider.credentialFromResult(result);
       const accessToken = credential.accessToken;
-  
+   console.log(user);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
     })
