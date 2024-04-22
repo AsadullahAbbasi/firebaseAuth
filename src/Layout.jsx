@@ -5,13 +5,14 @@ import Home from "./Home";
 import { useState } from "react";
 import { createContext } from "react";
 import Login from "./Login"
+import Facebook from "./Facebook";
 export  const LoginContext = createContext()
 const Layout = () => {
   let [isLogin,setLogin] = useState(false)
  console.log(isLogin);
   return (
     <div>
-   <LoginContext.Provider value={{isLogin,setLogin}} >
+   {/* <LoginContext.Provider value={{isLogin,setLogin}} >
    
    <BrowserRouter>
           <Routes>
@@ -20,8 +21,8 @@ const Layout = () => {
           {!isLogin ? <Route path="/login" element={<Login/>} />   : "" } 
           </Routes>
         </BrowserRouter>
-   </LoginContext.Provider>
-
+   </LoginContext.Provider> */}
+ <Facebook/>
     </div>
   );
 };
