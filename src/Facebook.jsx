@@ -27,7 +27,7 @@ const Facebook = () => {
     });
 
     return () => unsubscribe();
-  }, []);
+  });
 const handleFb = (e)=>{
   e.preventDefault()
   const auth = getAuth(app);

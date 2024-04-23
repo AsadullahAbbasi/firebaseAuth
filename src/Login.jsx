@@ -18,29 +18,27 @@ const Login = () => {
     const auth = getAuth(app);
   console.log(e);
   signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
+  .then((userCredential) => {
+    const user = userCredential.user;
 
-          console.log("User logged in:", user);
-          setLogin(true);
-          navigate("/");
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.error("Login error:", errorCode, errorMessage);
-        });
+    console.log("User logged in:", user);
+    setLogin(true);
+    navigate("/");
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error("Login error:", errorCode, errorMessage);
+  });
   // auth.currentUser.reload().then(() => {
   //   const isEmailVerified = auth.currentUser.emailVerified;
   //   if (isEmailVerified) {
-      
+     
   //   } else {
   //     console.log("Email is not verified.");
   //   }
   // });
-    // if (auth.currentUser) {
- 
-    // }
+  
   };
 
   return (
