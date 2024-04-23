@@ -75,6 +75,7 @@ const Login = () => {
           <button onClick={(e) => loginHandler(e)}>Login</button>
         </div>
       </form>
+      
     </div>
   );
 };

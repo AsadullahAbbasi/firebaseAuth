@@ -8,6 +8,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { Link } from "react-router-dom";
+import Facebook from "./Facebook";
 
 
 
@@ -112,6 +113,7 @@ const Signup = () => {
           </div>
         </section>
       )}
+      <Facebook/>
     </section>
   );
 };

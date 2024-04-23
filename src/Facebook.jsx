@@ -4,7 +4,7 @@ import app from './firebase';
 import { useEffect } from 'react';
 // import { useContext } from "react";
 // import { LoginContext } from "./Layout";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Facebook = () => {
   const navigate = useNavigate();
   useEffect(() => {
