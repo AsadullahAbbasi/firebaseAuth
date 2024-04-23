@@ -2,18 +2,11 @@ import React from 'react'
 import { getAuth, signInWithPopup, FacebookAuthProvider ,onAuthStateChanged } from "firebase/auth";
 import app from './firebase';
 import { useEffect } from 'react';
-import { useContext } from "react";
-import { LoginContext } from "./Layout";
-import { useNavigate } from 'react-router-dom';
 const Facebook = () => {
-  const navigate = useNavigate()
-  const { setLogin } = useContext(LoginContext);
   useEffect(() => {
     const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setLogin(false)
-        navigate("/")
         const { displayName, email, emailVerified, uid } = user;
         console.log(
           "User is signed in:",
