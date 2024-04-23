@@ -1,8 +1,12 @@
 import React from 'react'
 import app from './firebase';
 import { getAuth, signOut ,onAuthStateChanged,deleteUser} from "firebase/auth";
+import { useContext } from "react";
+import { LoginContext } from "./Layout";
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
-
+  const { setLogin } = useContext(LoginContext);
+  const navigate = useNavigate()
   const handleSignout = (e)=>{
     const auth = getAuth(app);
  e.preventDefault()
@@ -15,6 +19,8 @@ const Home = () => {
     // ...
   } else {
   console.log("  // User is signed out");
+  setLogin(false);
+   navigate("/")
     // ...
   }
 });
