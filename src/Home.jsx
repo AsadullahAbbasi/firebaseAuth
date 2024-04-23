@@ -19,7 +19,7 @@ const Home = () => {
     // ...
   } else {
   console.log("  // User is signed out");
-  setLogin(false);
+  setLogin(true);
    navigate("/")
     // ...
   }
