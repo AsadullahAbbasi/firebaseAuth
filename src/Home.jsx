@@ -19,14 +19,15 @@ const Home = () => {
     // ...
   } else {
   console.log("  // User is signed out");
-  setLogin(true);
-   navigate("/")
+ 
     // ...
   }
 });
 signOut(auth).then(() => {
   // Sign-out successful.
   console.log("signout");
+  setLogin(true);
+  navigate("/")
 }).catch((error) => {
   // An error happened.
   console.log(error);

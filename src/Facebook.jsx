@@ -6,14 +6,14 @@ import { useContext } from "react";
 import { LoginContext } from "./Layout";
 import { useNavigate } from 'react-router-dom';
 const Facebook = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const { setLogin } = useContext(LoginContext);
   useEffect(() => {
     const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setLogin(true)
-        navigate("/")
+       navigate("/")
+       setLogin(false)
         const { displayName, email, emailVerified, uid } = user;
         console.log(
           "User is signed in:",
