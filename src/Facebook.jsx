@@ -7,8 +7,8 @@ import { LoginContext } from "./Layout";
 import { useNavigate } from 'react-router-dom';
 const Facebook = () => {
   const navigate = useNavigate();
+  const { setLogin } = useContext(LoginContext);
   useEffect(() => {
-    const { setLogin } = useContext(LoginContext);
     const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
