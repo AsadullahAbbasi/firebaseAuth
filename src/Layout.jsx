@@ -17,7 +17,7 @@ const Layout = () => {
           <Routes>
           
           <Route path="/" element={isLogin ? <Home /> : <Signup />} />        
-          {!isLogin ? <Route path="/login" element={<Login/>} />   : "" } 
+          {isLogin === false ? <Route path="/login" element={<Login/>} />   : "" } 
           </Routes>
         </BrowserRouter>
    </LoginContext.Provider>
