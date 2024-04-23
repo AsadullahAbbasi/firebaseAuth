@@ -12,8 +12,8 @@ const Facebook = () => {
     const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        setLogin(true)
          navigate("/")
-         setLogin(true)
         const { displayName, email, emailVerified, uid } = user;
         console.log(
           "User is signed in:",
